@@ -87,13 +87,29 @@
       <li>Диалог записи: услуга → мастер → дата → время → имя и телефон → подтверждение</li>
       <li>«Мои записи», отмена и ответы на частые вопросы: адрес, цены, часы работы</li>
       <li>После записи сделка в amoCRM, если клиент ведёт продажи там</li>
-      <li>Тесты на полный диалог в каждом мессенджере</li>
+      <li>365 автотестов: полный диалог в каждом мессенджере, проверка формата запросов к API, сбои YClients и CRM</li>
     </ul>
+    <figure class="chat"><pre>Клиент  нажимает [ Мужская стрижка — 1 500 ₽ ]
+Бот     Выберите мастера:
+        [ Артём Волков ]  [ Кирилл Орлов ]
+        [ Любой свободный мастер ]
+Клиент  нажимает [ ср 4 ноя ] → [ 12:00 ]
+Бот     Как вас зовут?  [ Меня зовут Иван ]
+Клиент  +7 (495) 123-45-67
+Бот     Нужен мобильный номер: он начинается с +7 9.
+Клиент  8 (999) 123-45-67
+Бот     Проверьте запись:
+        Мужская стрижка, Артём Волков, ср 4 ноября, 12:00
+        [ Подтвердить ]
+Клиент  нажимает [ Подтвердить ]
+        → запись в YClients, сделка в amoCRM
+Бот     Готово! Вы записаны.</pre><figcaption>Фрагмент демо-диалога в Telegram. В VK и MAX сценарий тот же.</figcaption></figure>
     <p class="meta"><b>Стек</b> Python, MAX Bot API, VK Bots API, Telegram Bot API, YClients API, amoCRM API</p>
   </div>
 </article>
 
 <article class="proj solo" id="n8n-leads">
+  <div class="pics"><figure><img src="img/auto-n8n-vk.jpg" alt="Схема n8n: вебхук VK, ИИ-квалификация, amoCRM, карточка в Telegram и ветка ошибок" loading="lazy" width="1420" height="430"></figure></div>
   <div class="info">
     <p class="kind">Демо для бизнеса · n8n<span class="tag">демо</span></p>
     <h2 class="pt">Заявка из VK → оценка ИИ → amoCRM → Telegram</h2>
@@ -103,12 +119,14 @@
       <li>ИИ-квалификация через YandexGPT или GigaChat, данные не уходят за рубеж</li>
       <li>Сделка, контакт, теги и заметка в amoCRM через API</li>
       <li>Если что-то упало, алерт в Telegram, заявка не теряется молча</li>
+      <li>Автотест на 87 проверок вместе со вторым сценарием, включая сбои ИИ, amoCRM и Telegram</li>
     </ul>
     <p class="meta"><b>Стек</b> n8n, VK API, LLM API, amoCRM API, Telegram Bot API</p>
   </div>
 </article>
 
 <article class="proj solo" id="n8n-yclients">
+  <div class="pics"><figure><img src="img/auto-n8n-yclients.jpg" alt="Схема n8n: вебхук YClients, ожидание до напоминания, просьба оценить визит и развилка по оценке" loading="lazy" width="1420" height="752"></figure></div>
   <div class="info">
     <p class="kind">Демо для бизнеса · n8n<span class="tag">демо</span></p>
     <h2 class="pt">YClients: напоминание о визите и сбор отзывов</h2>
