@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Автоматизации: автопостинг, боты, n8n — Кристофер Комаланги</title>
+<meta name="description" content="Системы, которые работают без меня: автопостинг на 8 площадок, очередь видео, бот записи для MAX, VK и Telegram с YClients, n8n-сценарии с ИИ-квалификацией лидов и amoCRM.">
+<link rel="canonical" href="https://komalangi.github.io/automation.html">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:site_name" content="Кристофер Комаланги">
+<meta property="og:title" content="Автоматизации: автопостинг, боты, n8n — Кристофер Комаланги">
+<meta property="og:description" content="Автопостинг на 8 площадок, бот записи для MAX, VK и Telegram с YClients, n8n-сценарии с ИИ и amoCRM.">
+<meta property="og:url" content="https://komalangi.github.io/automation.html">
+<meta property="og:image" content="https://komalangi.github.io/img/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;600&family=Onest:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+  <a class="brand" href="index.html">Кристофер Комаланги</a>
+  <nav class="menu" aria-label="Разделы сайта"><a href="index.html">Главная</a><a href="cases.html">Кейсы</a><a href="projects.html">Проекты</a><a href="automation.html" aria-current="page">Автоматизации</a><a href="services.html">Услуги</a><a href="experience.html">Опыт</a><a href="contact.html">Контакты</a></nav>
+  <span class="status">Санкт-Петербург · открыт к работе и проектам</span>
+</header>
+<main>
+<div class="page-title"><h1>Автоматизации</h1><p>Системы, которые работают без меня: публикуют контент, принимают заявки, записывают клиентов и присылают отчёты. Собираю с ИИ в Claude Code, пишу на Python, запускаю на сервере и проверяю по логам.</p></div>
+
+<nav class="toc" aria-label="Автоматизации на странице"><a href="#autopost">Автопостинг</a><a href="#video">Очередь видео</a><a href="#voice">Озвучка и сборка</a><a href="#booking">Бот записи MAX · VK · TG</a><a href="#n8n-leads">n8n: лиды в amoCRM</a><a href="#n8n-yclients">n8n: напоминания YClients</a><a href="#alice">Telegram → Алиса</a></nav>
+
+<article class="proj solo" id="autopost">
+  <div class="info">
+    <p class="kind">Своя система · работает каждый день</p>
+    <h2 class="pt">Контент-завод на автопилоте</h2>
+    <p>Контент четырёх проектов выходит сам: 16 аккаунтов на 8 площадках, от Telegram и ВК до YouTube, Rutube, Дзена, TikTok, Threads и Instagram. Я готовлю план на две недели, дальше публикации идут по расписанию.</p>
+    <ul>
+      <li>7 задач по расписанию: у каждой своё время, своя вкладка и защита от двойного запуска</li>
+      <li>Единая очередь: мимо неё ничего не публикуется, перед выходом проверка на дубль</li>
+      <li>Обложка для каждого ролика генерируется скриптом, без обложки публикация не уходит</li>
+      <li>Метки площадок в ссылках: видно, откуда пришли люди</li>
+      <li>После каждого запуска отчёт в Telegram-бот, по понедельникам сводная аналитика</li>
+    </ul>
+    <p class="meta"><b>Что делал</b> архитектура, скрипты, тексты, обложки</p>
+    <p class="meta"><b>Стек</b> Python, Telethon, задачи по расписанию в Claude Code, автоматизация браузера</p>
+  </div>
+</article>
+
+<article class="proj solo" id="video">
+  <div class="info">
+    <p class="kind">Своя система · Python</p>
+    <h2 class="pt">Очередь видео для YouTube, Rutube и Дзена</h2>
+    <p>Один скрипт ведёт выкладку роликов двух каналов: квоты, очередь, журнал публикаций и ошибок.</p>
+    <ul>
+      <li>Квоты по брендам: «Ой, всё» — 2 шортса в день на каждой площадке и длинный выпуск по пятницам, «Запилил» — шортс в день</li>
+      <li>Журнал публикаций и отдельный журнал ошибок: видно, что вышло и что нет</li>
+      <li>Большие файлы загружаются частями</li>
+      <li>Только стандартная библиотека Python, без внешних зависимостей</li>
+    </ul>
+    <p class="meta"><b>Стек</b> Python</p>
+  </div>
+</article>
+
+<article class="proj solo" id="voice">
+  <div class="info">
+    <p class="kind">Своя система · видео</p>
+    <h2 class="pt">Озвучка и сборка роликов</h2>
+    <p>Ролики для «Ой, всё», «Запилил» и Подкола собираются кодом: нейросетевой голос, монтаж и обложки.</p>
+    <ul>
+      <li>Синтез речи с автоматической проверкой ударений в сценарии</li>
+      <li>Монтаж через Python и ffmpeg, ручная доводка в CapCut</li>
+      <li>Обложки и превью под каждую площадку генерируются скриптом</li>
+    </ul>
+    <p class="meta"><b>Стек</b> Python, ffmpeg, нейросетевой синтез речи</p>
+  </div>
+</article>
+
+<article class="proj solo" id="booking">
+  <div class="info">
+    <p class="kind">Демо для бизнеса · боты<span class="tag">демо</span></p>
+    <h2 class="pt">Бот записи для MAX, VK и Telegram с YClients</h2>
+    <p>Клиент барбершопа или салона записывается прямо в мессенджере: выбирает услугу, мастера, дату и время. Запись сразу попадает в YClients, администратор получает уведомление. Одно ядро работает в трёх мессенджерах, поэтому переезд из Telegram в MAX не ломает запись.</p>
+    <ul>
+      <li>Диалог записи: услуга → мастер → дата → время → имя и телефон → подтверждение</li>
+      <li>«Мои записи», отмена и ответы на частые вопросы: адрес, цены, часы работы</li>
+      <li>После записи сделка в amoCRM, если клиент ведёт продажи там</li>
+      <li>Тесты на полный диалог в каждом мессенджере</li>
+    </ul>
+    <p class="meta"><b>Стек</b> Python, MAX Bot API, VK Bots API, Telegram Bot API, YClients API, amoCRM API</p>
+  </div>
+</article>
+
+<article class="proj solo" id="n8n-leads">
+  <div class="info">
+    <p class="kind">Демо для бизнеса · n8n<span class="tag">демо</span></p>
+    <h2 class="pt">Заявка из VK → оценка ИИ → amoCRM → Telegram</h2>
+    <p>Заявка из сообщений или лид-формы VK сама попадает в amoCRM. ИИ читает её и ставит метку: горячий, тёплый или холодный клиент, какая услуга, бюджет и срочность. Менеджер сразу получает в Telegram карточку со ссылкой на сделку и звонит горячим первым.</p>
+    <ul>
+      <li>Вебхук VK Callback API: сообщения и лид-формы</li>
+      <li>ИИ-квалификация через YandexGPT или GigaChat, данные не уходят за рубеж</li>
+      <li>Сделка, контакт, теги и заметка в amoCRM через API</li>
+      <li>Если что-то упало, алерт в Telegram, заявка не теряется молча</li>
+    </ul>
+    <p class="meta"><b>Стек</b> n8n, VK API, LLM API, amoCRM API, Telegram Bot API</p>
+  </div>
+</article>
+
+<article class="proj solo" id="n8n-yclients">
+  <div class="info">
+    <p class="kind">Демо для бизнеса · n8n<span class="tag">демо</span></p>
+    <h2 class="pt">YClients: напоминание о визите и сбор отзывов</h2>
+    <p>Клиент записался, и за сутки до визита ему приходит напоминание, а через несколько часов после визита просьба оценить. Пятёрку просим оставить отзыв на картах, а оценка 3 и ниже сразу уходит администратору с задачей в amoCRM, пока клиент не написал плохой отзыв.</p>
+    <ul>
+      <li>Вебхук YClients на создание записи</li>
+      <li>Напоминание за 24 часа, а если записались впритык, то за 2 часа</li>
+      <li>Оценка кнопками 1–5 и развилка: отзыв на картах или разбор с администратором</li>
+    </ul>
+    <p class="meta"><b>Стек</b> n8n, YClients API, amoCRM API, Telegram Bot API</p>
+  </div>
+</article>
+
+<article class="proj solo" id="alice">
+  <div class="info">
+    <p class="kind">Личная утилита</p>
+    <h2 class="pt">Telegram → Яндекс Станция</h2>
+    <p>Сообщение от выбранного человека в Telegram включает Алису на полную громкость и ставит будильник с нужной песней. Чтобы не проспать важное.</p>
+    <p class="meta"><b>Стек</b> Python, Telethon, управление Станцией по локальной сети</p>
+  </div>
+</article>
+
+<div class="contact"><h2>Нужно что-то автоматизировать?</h2><p>Опишите, что сейчас делается руками и сколько времени это съедает. Отвечу в тот же день и скажу, что можно забрать на автомат.</p><div class="cta"><a class="btn main" href="https://t.me/kristofer_li">Написать в Telegram</a><a class="btn alt" href="services.html">Услуги</a></div></div>
+</main>
+<footer class="bottom"><span>Кристофер Комаланги · Санкт-Петербург</span><a href="https://t.me/kristofer_li">Telegram @kristofer_li</a></footer>
+</div>
+</body>
+</html>
